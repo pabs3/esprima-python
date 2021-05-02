@@ -197,15 +197,6 @@ class TestEsprima(unittest.TestCase):
         self.assertIsInstance(r, Script)
 
 
-# class TestThirdParty(unittest.TestCase):
-#     pass
-
-
-# for path in glob.glob(os.path.join(BASE_DIR, '3rdparty', '*.js')):
-#     for test_name, test in test_factory(path):
-#         setattr(TestThirdParty, 'test_%s' % test_name, test)
-
-
 for fixture_path in glob.glob(os.path.join(BASE_DIR, 'fixtures', '*')):
     class_name = os.path.basename(fixture_path).replace('-', ' ').replace('.', ' ')
     class_name = 'Test%s' % ''.join((n.capitalize() if n.islower() else n) for n in class_name.split())
